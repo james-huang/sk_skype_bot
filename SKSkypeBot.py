@@ -59,7 +59,8 @@ class SkypeBot(object):
 
   def MessageStatus(self, msg, status):
     if status == Skype4Py.cmsReceived:
-      if msg.Chat.Type in (Skype4Py.chatTypeDialog, Skype4Py.chatTypeLegacyDialog):
+      if "Dev Chat" in msg.Chat.Topic:
+        #msg.Chat.Type in (Skype4Py.chatTypeDialog, Skype4Py.chatTypeLegacyDialog):
         for regexp, target in self.commands.items():
           match = re.match(regexp, msg.Body, re.IGNORECASE)
           if match:
