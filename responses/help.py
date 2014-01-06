@@ -24,10 +24,28 @@ POPCORN_HELP = '!popcorn', '!popcorn',\
   Called when there is a very interesting thread of conversation going on. A random gif of popcorn will be posted for you into the skype thread.
 """
 
+SAD_HELP = '!sad', '!sad', \
+"""!sad
+  Sad? Upset? Angry? Don't like hearing bad news?
+"""
+
+HAPPY_HELP = '!happy', '!happy', \
+"""!happy
+  Happy? Just heard good news? Want to gloat? Want to dance?
+"""
+
+WELLDONE_HELP = '!welldone', '!welldone', \
+"""!welldone
+  Well Done! Use this when you want to approve of something. To congratulate someone for an exceptionaly well done job.
+"""
+
 HELP_MESSAGE_LIST = \
 [
 HELP_HELP,
 POPCORN_HELP,
+SAD_HELP,
+HAPPY_HELP,
+WELLDONE_HELP,
 ]
 
 MAN_PAGES = {}
@@ -42,6 +60,7 @@ class Help(object):
     %s
 
     If you want to add some functionality, fork https://github.com/james-huang/sk_skype_bot and submit a pull request.
+    If there is gif content that is offensive to you, please let James know and he will take it down.
   """ % '\n    '.join([k for k in sorted(USAGE)])
 
   def __init__(self):

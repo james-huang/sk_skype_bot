@@ -37,14 +37,21 @@ class SkypeBot(object):
   """
   commands = {
     #"!help *(.*)": "help",
-    "!help *(.*)": "help",
-    "!popcorn": "popcorn",
+    "^!help *(.*)": "help",
+    "^!popcorn *(.*)": "popcorn",
+    "^!happy *(.*)": "happy",
+    "^!sad *(.*)": "sad",
+    "^!welldone *(.*)": "well_done",
   }
 
   def __init__(self):
     self.skype = Skype4Py.Skype(Events=self)
     self.skype.FriendlyName = "SK Skype Bot"
     self.skype.Attach()
+
+  def __del__(self):
+    # may want to to save state across sessions
+    pass
 
   def AttachmentStatus(self, status):
     if status == Skype4Py.apiAttachAvailable:
@@ -55,10 +62,8 @@ class SkypeBot(object):
       if msg.Chat.Type in (Skype4Py.chatTypeDialog, Skype4Py.chatTypeLegacyDialog):
         for regexp, target in self.commands.items():
           match = re.match(regexp, msg.Body, re.IGNORECASE)
-          print match
           if match:
             msg.MarkAsSeen()
-            print match.groups()
             reply = module_dict[target].response(*match.groups())
             if reply:
               msg.Chat.SendMessage("sk_bot: " + reply)
