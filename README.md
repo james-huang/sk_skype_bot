@@ -1,8 +1,7 @@
 sk_skype_bot
 ============
 
-Skype Bot
-
+Shopkick's Skype Bot
 
   To add additional reponses to the skype bot:
    1. decide on the command you want to implement: e.g !sayhi
