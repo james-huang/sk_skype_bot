@@ -89,6 +89,15 @@ class Welldone(GifBase):
   def __init__(self):
     self.URLS = URLS
 
+  def response(self, *args):
+    if len(args) > 0:
+      try:
+        index = int(args[0]) % len(URLS)
+      except:
+        name = args[0].strip()
+        name = "@%s: "%name if name else ""
+    return name+choice(self.URLS)
+
 if __name__ == "__main__":
   wd = Welldone()
   print wd.response()

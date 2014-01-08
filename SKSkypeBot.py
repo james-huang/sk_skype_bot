@@ -42,6 +42,7 @@ class SkypeBot(object):
     "^!happy *(.*)": "happy",
     "^!sad *(.*)": "sad",
     "^!welldone *(.*)": "well_done",
+    "^!be *(.*)":"be",
   }
 
   def __init__(self):
@@ -59,16 +60,19 @@ class SkypeBot(object):
 
   def MessageStatus(self, msg, status):
     if status == Skype4Py.cmsReceived:
-      if "Dev Chat" in msg.Chat.Topic:
-        #msg.Chat.Type in (Skype4Py.chatTypeDialog, Skype4Py.chatTypeLegacyDialog):
-        for regexp, target in self.commands.items():
-          match = re.match(regexp, msg.Body, re.IGNORECASE)
-          if match:
-            msg.MarkAsSeen()
-            reply = module_dict[target].response(*match.groups())
-            if reply:
-              msg.Chat.SendMessage("sk_bot: " + reply)
-            break
+      #if "Dev Chat" in msg.Chat.Topic:
+      #if msg.Chat.Type in (Skype4Py.chatTypeDialog, Skype4Py.chatTypeLegacyDialog):
+      for regexp, target in self.commands.items():
+        match = re.match(regexp, msg.Body, re.IGNORECASE)
+        if match:
+          msg.MarkAsSeen()
+          reply = module_dict[target].response(*match.groups())
+          if reply:
+            msg.Chat.SendMessage(reply)
+          if target == "be": # say 2 things
+            reply2 = module_dict[target].response(*match.groups())
+            msg.Chat.SendMessage(reply2)
+          break
 
 
 if __name__ == "__main__":

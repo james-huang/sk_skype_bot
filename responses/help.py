@@ -26,17 +26,17 @@ POPCORN_HELP = '!popcorn', '!popcorn',\
 
 SAD_HELP = '!sad', '!sad', \
 """!sad
-  Sad? Upset? Angry? Don't like hearing bad news?
+  Sad? Upset? Angry? Don't like hearing bad news? A random gif of sadness will be posted for you into the skype thread.
 """
 
 HAPPY_HELP = '!happy', '!happy', \
 """!happy
-  Happy? Just heard good news? Want to gloat? Want to dance?
+  Happy? Just heard good news? Want to gloat? Want to dance?  A random gif of happiness will be posted for you into the skype thread.
 """
 
-WELLDONE_HELP = '!welldone', '!welldone', \
+WELLDONE_HELP = '!welldone', '!welldone [name]', \
 """!welldone
-  Well Done! Use this when you want to approve of something. To congratulate someone for an exceptionaly well done job.
+  Well Done! Use this when you want to approve of something. To congratulate someone for an exceptionaly well done job. A random gif of approval will be posted for you into the skype thread.
 """
 
 HELP_MESSAGE_LIST = \
