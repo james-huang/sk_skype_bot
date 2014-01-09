@@ -159,7 +159,7 @@ MARK = \
 "LOL",
 "RESPEK!",
 "BRO!",
-"cut dat shit out, Bo\n ZO!",
+"cut dat shit out, Bo\nZO!",
 "Granola Grizzly",
 "Sorry, TinkerBell...",
 "ding Ding DING!!!",

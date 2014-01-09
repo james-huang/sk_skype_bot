@@ -137,7 +137,6 @@ URLS = \
 "http://i.imgur.com/rLuul.gif",
 "http://i.imgur.com/BUicA.gif",
 "http://i.imgur.com/8x6ot.gif",
-"http://i.imgur.com/Ts3Cj.gif",
 "http://i.imgur.com/iWPWB.gif",
 "http://i.imgur.com/bXwVs.gif",
 "http://i.imgur.com/58dmS.gif",
